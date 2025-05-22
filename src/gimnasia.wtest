@@ -1,16 +1,65 @@
 import gimnasia.*
 
 describe "rutinas" {
-
-//Punto 1: rutinas
+	//Punto 1: rutinas
 //	const correrEnLaPlaya = // Una actividad de running con intensisdad 1.2
 //	const remarEnElDelta = // Una actividad de remo
 //	const remarEnCaminoRemeros = // Una actividad de remo comptetitivo
 //	const maratonBA = //Una maraton con intensidad 1.5
+	
+	test "Correr en la playa"{
+		const correrEnLaPlaya = new Running (intesidadDeLaRutina = 1.2)
+		const correrEnLaPlaya2 = new Running (intesidadDeLaRutina = 1.2)
 
+		correrEnLaPlaya.tiempoDeRutina(5)
+		correrEnLaPlaya2.tiempoDeRutina(90)
+		assert.equals(360, correrEnLaPlaya.tiempoDeBajaDeCalorias())
+		assert.equals(10200, correrEnLaPlaya2.tiempoDeBajaDeCalorias())
+	}
+
+	test "Remar en el Delta"{
+		const remarEnElDelta = new Remo ()
+		const remarEnElDelta2 = new Remo()
+
+		remarEnElDelta.tiempoDeRutina(5)
+		remarEnElDelta2.tiempoDeRutina(90)
+		assert.equals(520, remarEnElDelta.tiempoDeBajaDeCalorias())
+		assert.equals(9360, remarEnElDelta2.tiempoDeBajaDeCalorias())
+	}
+
+	test "Maraton de BA"{
+		const maratonDeBa = new Maraton (intesidadDeLaRutina = 1.5)
+		const maratonDeBa2 = new Maraton (intesidadDeLaRutina = 1.5)
+
+		maratonDeBa.tiempoDeRutina(5)
+		maratonDeBa2.tiempoDeRutina(90)
+		assert.equals(900, maratonDeBa.tiempoDeBajaDeCalorias())
+		assert.equals(25500, maratonDeBa2.tiempoDeBajaDeCalorias())
+	}
+
+	test "Remo en el Camino Remeros"{
+		const remoEnCaminoRemero = new RemoDeCompeticion ()
+		const remoEnCaminoRemero2 = new RemoDeCompeticion ()
+
+		remoEnCaminoRemero.tiempoDeRutina(5)
+		remoEnCaminoRemero2.tiempoDeRutina(5)
+		assert.equals(510, remoEnCaminoRemero.tiempoDeBajaDeCalorias())
+		assert.equals(510, remoEnCaminoRemero2.tiempoDeBajaDeCalorias())
+	}
+
+}
+describe "Personas"{
 //Punto 2: personas
 	//const calamardo = //Una persona Sedentaria con peso 60 y tiempo de ejercicio 5
- 	//const bob =  // Una persona atleta con peso 40 
+ 	//const bob =  // Una persona atleta con peso 40
+
+	test "Peso de una persona sedentaria"{
+		
+	}
+}
+ 
+
+
 
 //Punto 3: clubes
 	//const recreo = //un predio con correrEnLaPlaya y maratonBA
